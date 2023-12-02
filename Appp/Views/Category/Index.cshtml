@@ -1,0 +1,26 @@
+﻿@model List<Category>
+
+<h2>Category Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.CategoryId</td>
+                <td>@i.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@i.CategoryId">Details</a> |
+                    <!-- Add links for Edit and Delete actions as needed -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

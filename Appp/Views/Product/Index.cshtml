@@ -1,0 +1,29 @@
+﻿@model List<Product>
+
+<h2>Product Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Category.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@product.ProductId">Details</a> |
+                    <!-- Add links for Edit and Delete actions as needed -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
